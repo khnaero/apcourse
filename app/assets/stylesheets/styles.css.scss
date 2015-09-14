@@ -8,6 +8,7 @@ body {
 
 .navbar {
   background-image: image-url('bg.gif');
+  /*#293A46*/
   /*background-color: #87CEEB; /*#25383C*/
   letter-spacing: 0px;
   font-weight: 600;
@@ -38,18 +39,6 @@ body {
 html {
   overflow-y: scroll;
 }
-
-/*.jumbotron {
-  height: 800px;
-  background-image: url("IMG_0403-X2.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.jumbotron:hover .bg-overlay {
-  height: 100%;
-  background: rgba(0,0,0,0.5);
-}*/
 
 .home {
   background-image: url("IMG_0403-X2.jpg");
@@ -85,20 +74,6 @@ html {
   padding-left: 130px;
 }
 
-/*.jumbotron h1 {
-    color: yellow;
-    font-size: 60px;
-    letter-spacing: -1px;
-    line-height: 1;
-    margin-bottom: 0;
-}*/
-
-/*.home {
-  background-image: url("IMG_0403-X2.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-*/
 #logo {
   float: left;
   margin-right: 10px;
@@ -113,3 +88,46 @@ html {
   }
 }
 
+/*.sidebar {
+  position: fixed;
+  top: 50;
+  left: 0;
+  bottom: 0;
+  z-index: 1000;
+  display: block;
+  background: black;
+  color: white;
+}*/
+
+/*.main {
+  position: fixed;
+  top: 50;
+  left: 200;
+  bottom: 0;
+  z-index: 1000;
+  display: block;
+  background: blue;
+  color: white;
+}*/
+
+#sidebar-wrapper {
+  width: 250px;
+  z-index: 1000;
+  position: fixed;
+  left: 250px;
+  height: 100%;
+  margin-left: -250px;
+  overflow-y: auto;
+  background: black none repeat scroll 0% 0%; 
+  top: 50px;
+  padding-top: 20px;
+  color: white;
+}
+
+.form-inputs abbr {
+  display: none;
+}
+
+.text abbr {
+  display: none;
+}
