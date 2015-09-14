@@ -1,0 +1,115 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+body {
+  padding-top: 60px;
+}
+
+.navbar {
+  background-image: image-url('bg.gif');
+  /*background-color: #87CEEB; /*#25383C*/
+  letter-spacing: 0px;
+  font-weight: 600;
+  border: none;
+}
+
+.nav.navbar-nav li a {
+    color: white;
+}
+.nav.navbar-nav li a:hover {
+    color: yellow;
+}
+
+.container-fluid {
+	padding-right: 30px;
+	padding-left: 20px;
+}
+
+/*html {
+	background: url("IMG_0403-X2.jpeg") no-repeat center center fixed;
+	background-image: image-url('IMG_0403-X2.jpeg');
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}*/
+
+html {
+  overflow-y: scroll;
+}
+
+/*.jumbotron {
+  height: 800px;
+  background-image: url("IMG_0403-X2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.jumbotron:hover .bg-overlay {
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+}*/
+
+.home {
+  background-image: url("IMG_0403-X2.jpg");
+  /*background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('IMG_0403-X2.jpg');*/
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.about {
+  background-image: url("img_0789.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.well {
+  background: rgba(49, 65, 82, 0.7);
+  color: white;
+  border: none;
+}
+
+.jumbotron {
+  background: rgba(49, 65, 82, 0.7);
+  color: white;
+}
+
+.container .jumbotron {
+  padding-left: 130px;
+}
+
+/*.jumbotron h1 {
+    color: yellow;
+    font-size: 60px;
+    letter-spacing: -1px;
+    line-height: 1;
+    margin-bottom: 0;
+}*/
+
+/*.home {
+  background-image: url("IMG_0403-X2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+*/
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: 87CEEB;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
