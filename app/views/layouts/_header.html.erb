@@ -1,5 +1,5 @@
 <nav class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container-fluid">
+  <div class="container-fluid-header">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -17,7 +17,9 @@
       <ul class="nav navbar-nav">
         <li><%= link_to "Home",   root_path %></li>
         <li><%= link_to "About",   about_path %></li>
-        <li><%= link_to "Map",   map_path %></li>
+        <li><%= link_to "Map",   map_path, data: { no_turbolink: true} %></li>
+        <li><%= link_to "Map2",   map2_path, data: { no_turbolink: true} %></li>
+        <li><%= link_to "TestPage",   testpage_path, data: { no_turbolink: true} %></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">

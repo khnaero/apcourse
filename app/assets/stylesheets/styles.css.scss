@@ -22,7 +22,7 @@ body {
     color: yellow;
 }
 
-.container-fluid {
+.container-fluid-header {
 	padding-right: 30px;
 	padding-left: 20px;
 }
@@ -110,6 +110,10 @@ html {
   color: white;
 }*/
 
+#wrapper {
+  padding-left: 250px;
+}
+
 #sidebar-wrapper {
   width: 250px;
   z-index: 1000;
@@ -124,6 +128,24 @@ html {
   color: white;
 }
 
+.sidebar-nav {
+  position: absolute;
+  top: 0px;
+  width: 250px;
+  margin: 0px;
+  padding-left: 15px;
+  padding-top: 15px;
+  list-style: outside none none;
+}
+#page-content-wrapper {
+  width: 100%;
+}
+
+.container-fluid-map {
+  padding-right: 30px;
+  padding-left: 20px;
+}
+
 .form-inputs abbr {
   display: none;
 }
@@ -131,3 +153,9 @@ html {
 .text abbr {
   display: none;
 }
+
+.active {
+  background:red;
+  color: red;
+}
+
