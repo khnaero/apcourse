@@ -3,7 +3,7 @@
 
 
 body {
-  padding-top: 60px;
+  padding-top: 49px;
 }
 
 .navbar {
@@ -122,7 +122,7 @@ html {
   height: 100%;
   margin-left: -250px;
   overflow-y: auto;
-  background: black none repeat scroll 0% 0%; 
+  background: black none repeat scroll; 
   top: 50px;
   padding-top: 20px;
   color: white;
@@ -136,14 +136,20 @@ html {
   padding-left: 15px;
   padding-top: 15px;
   list-style: outside none none;
+  a:hover {
+    text-decoration: none;
+  };
+  a:visited {
+    text-decoration: none;
+  };
 }
 #page-content-wrapper {
   width: 100%;
 }
 
 .container-fluid-map {
-  padding-right: 30px;
-  padding-left: 20px;
+  padding-right: none;
+  padding-left: none;
 }
 
 .form-inputs abbr {
@@ -154,8 +160,32 @@ html {
   display: none;
 }
 
-.active {
+.select {
   background:red;
-  color: red;
+  /*a:active {
+    color: white;
+    text-decoration: none;
+  };*/
+  a:visited {
+    color: white;
+    text-decoration: none;
+  };
 }
+
+
+
+
+
+#owl-demo .item{
+  margin: 5px;
+}
+
+#owl-demo .item img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+
 

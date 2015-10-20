@@ -1,65 +1,40 @@
 
 
-<!-- <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script> -->
-<!-- <script src="assets/js/libs/handlebars.min.js"></script> -->
-<!-- <script src="http://maps.googleapis.com/maps/api/js"></script> -->
-<!-- <script src="assets/js/plugins/storeLocator/jquery.storelocator.js"></script> -->
+<div id="owl-demo" class="owl-carousel">
+  <a class="item link"><h1>1</h1></a>
+  <a class="item link"><h1>2</h1></a>
+  <a class="item link"><h1>3</h1></a>
+  <a class="item link"><h1>4</h1></a>
+  <a class="item link"><h1>5</h1></a>
+  <a class="item link"><h1>6</h1></a>
+  <a class="item link"><h1>7</h1></a>
+  <a class="item link"><h1>8</h1></a>
+  <a class="item link"><h1>9</h1></a>
+  <a class="item link"><h1>10</h1></a>
+  <a class="item link"><h1>11</h1></a>
+  <a class="item link"><h1>12</h1></a>
+  <a class="item link"><h1>13</h1></a>
+  <a class="item link"><h1>14</h1></a>
+  <a class="item link"><h1>15</h1></a>
+  <a class="item link"><h1>16</h1></a>
+</div>
 
-<!-- <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'></script> -->
-<head>
-<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-<style type="text/css">
-  html { height: 100% }
-  body { height: 100%; margin: 0; padding: 0 }
-  #map_canvas { height: 100% }
-</style>
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false">
-</script>
-<script type="text/javascript">
-var points = [
-    ['name1', 59.9362384705039, 30.19232525792222, 12, 'http://www.google.com'],
-    ['name2', 59.941412822085645, 30.263564729357767, 11, 'http://www.amazon.com'],
-    ['name3', 59.939177197629455, 30.273554411974955, 10, 'http://www.stackoverflow.com']
-];
- function setMarkers(map, locations) {
-// var shape = {
-// coord: [1, 1, 1, 20, 18, 20, 18 , 1],
-//     type: 'poly'
-//  };
-for (var i = 0; i < locations.length; i++) 
-    {
 
-    // var flag = new google.maps.MarkerImage('markers/' + (i + 1) + '.png',
-    //   new google.maps.Size(17, 19),
-    //   new google.maps.Point(0,0),
-    //   new google.maps.Point(0, 19));
-    var place = locations[i];
-    var myLatLng = new google.maps.LatLng(place[1], place[2]);
-    var marker = new google.maps.Marker({
-        position: myLatLng,
-        map: map,
-        // icon: flag,
-        // shape: shape,
-        title: place[0],
-        zIndex: place[3],
-        url: place[4]
+
+
+<script>
+  $(document).ready(function() {
+    $("#owl-demo").owlCarousel({
+      items:5
     });
-    google.maps.event.addListener(marker, 'click', function() {
-    window.location.href = this.url;
+
+    $('.link').on('click', function(event){
+      var $this = $(this);
+      if($this.hasClass('clicked')){
+        $this.removeAttr('style').removeClass('clicked');
+      } else{
+        $this.css('background','#7fc242').addClass('clicked');
+      }
     });
-    } 
-}
-function initialize() {
-var myOptions = {
-    center: new google.maps.LatLng(59.91823239768787, 30.243222856188822),
-    zoom: 12,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-var map = new google.maps.Map(document.getElementById("map_canvas"),myOptions);
-setMarkers(map, points);
-}
+  });
 </script>
-</head>
-<body onload="initialize()">
-<div id="map_canvas" style="width:50%; height:50%"></div>
-</body>

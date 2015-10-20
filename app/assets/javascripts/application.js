@@ -13,9 +13,7 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
+//= require owl.carousel.js
 //= require bootstrap-sprockets
 //= require turbolinks
-//= require handlebars-v4.0.2
-//= require jquery.storelocator
-//= require geocode
 //= require_tree .
