@@ -136,16 +136,27 @@ html {
   padding-left: 15px;
   padding-top: 15px;
   list-style: outside none none;
-  a:hover {
-    text-decoration: none;
-  };
-  a:visited {
-    text-decoration: none;
-  };
+ 
+
 }
+
+
+
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+a:active {
+  text-decoration: none;
+
+}
+
 #page-content-wrapper {
   width: 100%;
 }
+
 
 .container-fluid-map {
   padding-right: none;
@@ -162,10 +173,7 @@ html {
 
 .select {
   background:red;
-  /*a:active {
-    color: white;
-    text-decoration: none;
-  };*/
+  color: white;
   a:visited {
     color: white;
     text-decoration: none;
@@ -186,6 +194,28 @@ html {
   height: auto;
 }
 
+.box {
+  margin: 5px;
+  padding: 5px;
+  font-size: 15px;
+  line-height: 1.4em;
+  float: left;
+  -webskit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  /*border-radius: 5px;*/
+  box-shadow: 1px 1px 10px #444;
+  /*width: 210px;*/
+}
 
+.caption {
+  text-align: right;
+  text-decoration: none;
+}
 
-
+/*.box img {
+  display: block;
+  width: 100%;
+  -webskit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}*/

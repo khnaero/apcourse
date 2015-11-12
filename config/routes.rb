@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
   
+  resources :locations
+  resources :photos
   devise_for :users
   root :to => 'pages#home'
   get 'about' => 'pages#about'
   get 'map' => 'pages#map'
   get 'map2' => 'pages#map2'
-  get 'testpage' => 'pages#testpage'
+  # get 'testpage' => 'pages#testpage'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

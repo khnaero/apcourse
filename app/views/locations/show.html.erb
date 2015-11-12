@@ -1,0 +1,30 @@
+<% provide(:title, "Gallery") %>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @location.description %>
+</p>
+
+<div class="row">
+  <ul style="list-style-type:none;">
+    <% unless @photos.empty? %>
+      <% @photos.each do |pic| %>
+        <li class="span4">
+          <div class="box">
+            
+            <%= link_to image_tag(pic.image(:medium)), pic.image.url %>
+            <div class="caption">
+              <%#= link_to "Edit", photo_path(pic) %>
+              <%= link_to "", pic, :method => :delete,
+                  :data => { :confirm => "Are you sure?" },  class: "glyphicon glyphicon-remove-circle" %>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+
+<%= link_to '+Add', edit_location_path(@location) %> |
+<%= link_to 'Back', locations_path %>
