@@ -2,8 +2,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @location.description %>
+  <strong>Name:</strong>
+  <%= @location.name %>
 </p>
 
 <div class="row">
@@ -12,12 +12,13 @@
       <% @photos.each do |pic| %>
         <li class="span4">
           <div class="box">
-            
             <%= link_to image_tag(pic.image(:medium)), pic.image.url %>
             <div class="caption">
-              <%#= link_to "Edit", photo_path(pic) %>
-              <%= link_to "", pic, :method => :delete,
-                  :data => { :confirm => "Are you sure?" },  class: "glyphicon glyphicon-remove-circle" %>
+              <% if current_user == pic.user %>
+                <%#= link_to "Edit", edit_location_photo_path(@location, pic) %>
+                <%= link_to "", location_photo_path(@location, pic), :method => :delete,
+                    :data => { :confirm => "Are you sure?" },  class: "glyphicon glyphicon-remove-circle" %>
+              <% end %>
             </div>
           </div>
         </li>
@@ -26,5 +27,6 @@
   </ul>
 </div>
 
+<%#= link_to '+Add', new_location_photo_path(@location) %>
 <%= link_to '+Add', edit_location_path(@location) %> |
 <%= link_to 'Back', locations_path %>

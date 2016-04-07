@@ -1,0 +1,35 @@
+<% provide(:title, "Map") %>
+
+<div id="wrapper">
+	<div id="sidebar-wrapper">
+		<ul class="sidebar-nav">
+			<% i = 0 %>
+		  <% @locations.each do |location| %>
+		  	<li id="<%= i %>"><a href="#" onclick="myClick(<%= i %>);"><%= location.name %></a></li>
+		  	<% i += 1 %>
+				<!-- <table>
+					<tr>
+						<td><%#= link_to 'Edit', edit_location_path(location) %></td>
+						<td><%#= link_to 'Delete', location_path(location),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+					</tr>
+				</table> -->
+			<% end %>
+		</ul>
+	</div>
+
+	<div id="page-content-wrapper">
+		<script src="http://maps.googleapis.com/maps/api/js"></script>
+
+		<%= javascript_include_tag 'create_markers' %>
+
+		<div id="gmap" style="height:800px"></div>
+
+		<%= link_to 'Add Location', new_location_path, class: "btn btn-primary btn-sm" %>
+		<%= link_to 'Edit Location', locations_path, class: "btn btn-primary btn-sm" %>
+	</div>
+</div>
+
+
+<!-- <li id="0"><a href="#" onclick="myClick(0);">Mueller Park</a></li> -->

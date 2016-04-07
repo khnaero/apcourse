@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
   
-  resources :locations
-  resources :photos
+  get 'map/index'
+
+  resources :locations do 
+    resources :photos
+  end
+  
   devise_for :users
   root :to => 'pages#home'
   get 'about' => 'pages#about'
-  get 'map' => 'pages#map'
+  get 'map' => 'map#index'
   get 'map2' => 'pages#map2'
   # get 'testpage' => 'pages#testpage'
 

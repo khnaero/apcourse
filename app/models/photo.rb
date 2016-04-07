@@ -1,5 +1,6 @@
 class Photo < ActiveRecord::Base
 	belongs_to :location
+	belongs_to :user
 	has_attached_file :image, styles: { large: "1100x880>", medium: "200x200>" }
 	# has_attached_file :image,
  #    :path => ":rails_root/public/images/:id/:filename",

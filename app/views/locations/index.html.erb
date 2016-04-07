@@ -1,4 +1,4 @@
-<% provide(:title, "Galleries") %>
+<% provide(:title, "Gallery") %>
 <!-- <p id="notice"><%= notice %></p> -->
 
 <h1>Locations</h1>
@@ -14,13 +14,17 @@
           <%= link_to image_tag(location.photos.first.image(:medium)), location_path(location) %>
           <%#= link_to (image_tag location.photos.first.image(:medium)), location %>
         <% else %>
-          N/A
+          <%= link_to 'Insert Your Photos', edit_location_path(location) %>
         <% end %>
           <p style="text-align: center;">
-            <%= location.description %>
-            <%= link_to 'Show', location %>
-            <%= link_to 'Edit', edit_location_path(location) %>
-            <%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= location.name %><br>
+            <%#= link_to 'Show', location %>
+            <% if current_user == location.user %>
+              <%= link_to 'Edit', edit_location_path(location) %>
+              <%= link_to 'Delete', location, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <%#= link_to "", location, :method => :delete,
+                    :data => { :confirm => "Are you sure?" },  class: "glyphicon glyphicon-remove-circle" %>
+            <% end %>
           </p>
       </div>
     </li>

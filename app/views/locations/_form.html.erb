@@ -1,7 +1,12 @@
 <%= simple_form_for @location, html: { multipart: true } do |f| %>
   <%= f.error_notification %>
 
-  <%= f.input :description %>
+  <%# if current_user == @location.user %>
+    <%= f.input :name %>
+    <%= f.input :latitude %>
+    <%= f.input :longitude %>
+    <%= f.input :equipment %>
+  <%# end %>
 
   <%= f.label :photos %>
   <%= file_field_tag "images[]", type: :file, multiple: true %>

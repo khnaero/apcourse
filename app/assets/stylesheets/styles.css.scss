@@ -1,7 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
 body {
   padding-top: 49px;
 }
@@ -22,19 +21,11 @@ body {
     color: yellow;
 }
 
+
 .container-fluid-header {
 	padding-right: 30px;
 	padding-left: 20px;
 }
-
-/*html {
-	background: url("IMG_0403-X2.jpeg") no-repeat center center fixed;
-	background-image: image-url('IMG_0403-X2.jpeg');
-	-webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}*/
 
 html {
   overflow-y: scroll;
@@ -88,29 +79,7 @@ html {
   }
 }
 
-/*.sidebar {
-  position: fixed;
-  top: 50;
-  left: 0;
-  bottom: 0;
-  z-index: 1000;
-  display: block;
-  background: black;
-  color: white;
-}*/
-
-/*.main {
-  position: fixed;
-  top: 50;
-  left: 200;
-  bottom: 0;
-  z-index: 1000;
-  display: block;
-  background: blue;
-  color: white;
-}*/
-
-#wrapper {
+/*#wrapper {
   padding-left: 250px;
 }
 
@@ -136,11 +105,13 @@ html {
   padding-left: 15px;
   padding-top: 15px;
   list-style: outside none none;
- 
+}*/
 
-}
-
-
+/*.col-md-2.no-float {
+  background: black none repeat scroll;
+  overflow-y: auto;
+  z-index: -1;
+}*/
 
 a:visited {
   text-decoration: none;
@@ -152,7 +123,7 @@ a:active {
   text-decoration: none;
 }
 
-#page-content-wrapper {
+/*#page-content-wrapper {
   width: 100%;
 }
 
@@ -160,7 +131,7 @@ a:active {
 .container-fluid-map {
   padding-right: none;
   padding-left: none;
-}
+}*/
 
 .form-inputs abbr {
   display: none;
@@ -215,7 +186,10 @@ a:active {
 /*.box img {
   display: block;
   width: 100%;
+  float: center;
   -webskit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
 }*/
+
+/*#map { height: 180px; }*/

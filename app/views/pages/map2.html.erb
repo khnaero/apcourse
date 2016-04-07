@@ -1,40 +1,152 @@
+<% provide(:title, "Map") %>
+<!-- <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-2 sidebar">
+			<h1>Sidebar</h1>
+		</div>
+		<div class="col-md-10">
+			<h1>Map</h1>
+		</div>
+	</div>
+</div> -->
 
 
-<div id="owl-demo" class="owl-carousel">
-  <a class="item link"><h1>1</h1></a>
-  <a class="item link"><h1>2</h1></a>
-  <a class="item link"><h1>3</h1></a>
-  <a class="item link"><h1>4</h1></a>
-  <a class="item link"><h1>5</h1></a>
-  <a class="item link"><h1>6</h1></a>
-  <a class="item link"><h1>7</h1></a>
-  <a class="item link"><h1>8</h1></a>
-  <a class="item link"><h1>9</h1></a>
-  <a class="item link"><h1>10</h1></a>
-  <a class="item link"><h1>11</h1></a>
-  <a class="item link"><h1>12</h1></a>
-  <a class="item link"><h1>13</h1></a>
-  <a class="item link"><h1>14</h1></a>
-  <a class="item link"><h1>15</h1></a>
-  <a class="item link"><h1>16</h1></a>
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+
+<script>
+
+var markers = [];
+function initialize() 
+{
+  // Locations table
+  var locations = [
+      ['Mueller Park', 30.296632,-97.704021, 'Pull Up Bars' + '<br />' + 'Sit Up Benches', '0'],
+      ['Texas DPS', 30.329132, -97.722369, 'Pull Up Bars' + '<br />' + 'Dip Bars', '1'],
+      ['Brentwood Neighborhood Park', 30.341346, -97.730263, 'Pull Up Bars' + '<br />' + 'Dip Bars' + '<br />' + 'Monkey Bars'],
+      ['Lakes at Northtown', 30.429016, -97.662109, 'Pull Up Bars' + '<br />' + 'Dip Bars'],
+      ['Clark Field', 30.280679, -97.734876, 'Pull Up Bars' + '<br />' + 'Dip Bars' + '<br />' + 'Leg Raise Stand' + '<br />' + 'Monkey Bars'],
+      ['Sanchez Elementary', 30.256759, -97.734767, 'Monkey Bars' + '<br />' + 'Dip Bars' + '<br />' + 'Pull Up Bars' + '<br />' + 'Sit Up Bench' + '<br />' + 'Balance Beam' + '<br />' + 'Lunge Steps']
+    ];
+
+  // Creates the map object.
+  var myCenter = new google.maps.LatLng(30.296632,-97.704021);
+  var mapProp = {
+      center: myCenter,
+      zoom:12,
+      mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map = new google.maps.Map(document.getElementById("gmap"),mapProp);
+
+  // Creates info window.
+  var infowindow = new google.maps.InfoWindow();
+
+  var marker, i;
+
+  for (i = 0; i < locations.length; i++) {  
+    marker = new google.maps.Marker({
+      position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+      map: map,
+    });
+
+    google.maps.event.addListener(marker, 'click', (function(marker, i) {
+      return function() {
+        infowindow.setContent(locations[i][3]);
+        infowindow.open(map, marker);
+        map.setCenter(new google.maps.LatLng(locations[i][1], locations[i][2]));
+        document.getElementById(locations[i][4]).click();
+      };
+    })
+    (marker, i));
+    markers.push(marker);
+  }
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+
+function myClick(id)
+{
+  google.maps.event.trigger(markers[id], 'click');
+}
+</script>
+
+<script>
+$(document).ready(function(){ 
+  $('.sidebar-nav').on('click','li', function(){
+     $(this).addClass('select').siblings().removeClass('select');
+  });
+});
+
+// $(document).ready(function() {
+//     $('ul').selectable();
+// });
+</script>
+
+<div id="wrapper">
+	<div id="sidebar-wrapper">
+		<ul class="sidebar-nav">
+			<li id="0"><a href="#" onclick="myClick(0);">Mueller Park</a></li>
+			<li id="1"><a href="#" onclick="myClick(1);">Texas DPS</a></li>
+      <li id="2"><a href="#" onclick="myClick(2);">Brentwood Neighborhood Park</a></li>
+      <li id="3"><a href="#" onclick="myClick(3);">Lakes at Northtown</a></li>
+      <li id="4"><a href="#" onclick="myClick(4);">Clark Field</a></li>
+      <li id="5"><a href="#" onclick="myClick(5);">Sanchez Elementary</a></li>
+      <li id="6"><a href="#" onclick="myClick(6);">Auditorium Shores</a></li>
+      <li id="7"><a href="#" onclick="myClick(7);">Mary Moore Searight Park</a></li>
+      <li id="8"><a href="#" onclick="myClick(8);">Shoal Creek</a></li>
+      <li id="9"><a href="#" onclick="myClick(9);">Riata Neighborhood Park</a></li>
+      <li id="10"><a href="#" onclick="myClick(10);">Rattan Creek Park</a></li>
+      <li id="11"><a href="#" onclick="myClick(11);">Champion Park</a></li>
+      <li id="12"><a href="#" onclick="myClick(12);">The Terrace</a></li>
+      <li id="13"><a href="#" onclick="myClick(13);">Dick Nichols District Park</a></li>
+      <li id="14"><a href="#" onclick="myClick(14);">Western Oaks Hike &amp; Bike Trail</a></li>
+      <li id="15"><a href="#" onclick="myClick(15);">Great Hills Park</a></li>
+      <li id="16"><a href="#" onclick="myClick(16);">Quail Creek Park</a></li>
+      <li id="17"><a href="#" onclick="myClick(17);">El Salido Park</a></li>
+      <li id="18"><a href="#" onclick="myClick(18);">Riverside and Lamar</a></li>
+      <li id="19"><a href="#" onclick="myClick(19);">ACC Northridge</a></li>
+      <li id="20"><a href="#" onclick="myClick(20);">Big Stacy Neighborhood Park</a></li>
+      <li id="21"><a href="#" onclick="myClick(21);">Tarrytown Neighborhood Park</a></li>
+      <li id="22"><a href="#" onclick="myClick(22);">Circle C Ranch Park</a></li>
+      <li id="23"><a href="#" onclick="myClick(23);">Festival Beach</a></li>
+      <li id="24"><a href="#" onclick="myClick(24);">Centaur Tech Park</a></li>
+      <li id="25"><a href="#" onclick="myClick(25);">Bohls Park</a></li>
+      <li id="26"><a href="#" onclick="myClick(26);">Pease District Park</a></li>
+      <li id="27"><a href="#" onclick="myClick(27);">Brushy Creek Lake Park</a></li>
+      <li id="27"><a href="#" onclick="myClick(27);">Brushy Creek Sports Park</a></li>
+		</ul>
+	</div>
+  
+	<div id="page-content-wrapper">
+		<div class="container-fluid-map">
+			<div id="gmap" style="height:600px"></div>
+		</div>
+    <!-- <br> -->
+   <!--  <div id="carousel" class="owl-carousel">
+      <div class="item"><img src="assets/gun1.jpg"></div>
+      <div class="item"><img src="assets/gun2.jpg"></div>
+      <div class="item"><img src="assets/gun3.jpg"></div>
+    </div> -->
+<%= link_to 'Add Location', new_location_path, class: "btn btn-primary btn-sm" %>
+    <div id="owl-demo" class="owl-carousel owl-theme">
+      <div class="item"><img src="assets/gun1.jpg"></div>
+      <div class="item"><img src="assets/gun2.jpg"></div>
+      <div class="item"><img src="assets/gun3.jpg"></div>
+      <div class="item"><img src="assets/ckf4C.jpg"></div>
+      <div class="item"><img src="assets/gun1.jpg"></div>
+      <div class="item"><img src="assets/gun2.jpg"></div>
+      <div class="item"><img src="assets/gun3.jpg"></div>
+    </div>
+	</div>
 </div>
-
-
-
 
 <script>
   $(document).ready(function() {
     $("#owl-demo").owlCarousel({
-      items:5
-    });
-
-    $('.link').on('click', function(event){
-      var $this = $(this);
-      if($this.hasClass('clicked')){
-        $this.removeAttr('style').removeClass('clicked');
-      } else{
-        $this.css('background','#7fc242').addClass('clicked');
-      }
+      loop:true,
+      items:4,
+      navigation : true,
+      pagination: false,
+      itemsDesktop: false,
+      itemsDesktopSmall: false
     });
   });
 </script>
