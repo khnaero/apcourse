@@ -1,10 +1,30 @@
-<%= simple_form_for(@photo) do |f| %>
+<%= simple_form_for [@location, @photo], html: { multipart: true } do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-  </div>
-
+  <%= f.label :photos %>
+  <%= file_field_tag "images[]", type: :file, multiple: true %>
+  <br>
   <div class="form-actions">
-    <%= f.button :submit %>
+  	<%= f.button :submit, class: "btn btn-primary btn-md" %>
   </div>
 <% end %>
+
+
+
+
+
+
+
+
+
+
+<%#= simple_form_for(@photo) do |f| %>
+  <%#= f.error_notification %>
+
+  <!-- <div class="form-inputs"> -->
+  <!-- </div> -->
+
+  <!-- <div class="form-actions"> -->
+    <%#= f.button :submit %>
+  <!-- </div> -->
+<%# end %>

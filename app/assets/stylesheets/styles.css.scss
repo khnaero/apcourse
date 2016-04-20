@@ -141,6 +141,14 @@ a:active {
   display: none;
 }
 
+.float abbr {
+  display: none;
+}
+
+.string abbr {
+  display: none;
+}
+
 .select {
   background:red;
   color: white;
@@ -150,10 +158,6 @@ a:active {
     text-decoration: none;
   };
 }
-
-
-
-
 
 #owl-demo .item{
   margin: 5px;
@@ -165,6 +169,29 @@ a:active {
   height: auto;
 }
 
+/*#locations {
+  margin: 0 auto;
+  margin-bottom: 10px;
+  margin-top: 200px;
+  margin-right: auto;
+  margin-left: auto;
+}*/
+
+.grid {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.grid li {
+  list-style-type: none;
+  display: inline-block;
+  *display: inline;
+  vertical-align: top;
+  height: 250px;
+  width: 225px;
+}
+
 .box {
   margin: 5px;
   padding: 5px;
@@ -173,9 +200,9 @@ a:active {
   float: left;
   -webskit-border-radius: 5px;
   -moz-border-radius: 5px;
-  /*border-radius: 5px;*/
+  border-radius: 5px;
   box-shadow: 1px 1px 10px #444;
-  /*width: 210px;*/
+  width: 214px;
 }
 
 .caption {
@@ -183,13 +210,11 @@ a:active {
   text-decoration: none;
 }
 
-/*.box img {
+.box img {
   display: block;
-  width: 100%;
-  float: center;
-  -webskit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-}*/
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 3px;
+}
 
 /*#map { height: 180px; }*/

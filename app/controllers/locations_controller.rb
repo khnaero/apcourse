@@ -43,12 +43,13 @@ class LocationsController < ApplicationController
         if params[:images]
           # The magic is here ;)
           params[:images].each { |image|
-            @location.photos.create(image: image)
+            @location.photos.create(image: image, user_id: current_user.id)
           }
         end
 
         # format.html { redirect_to locations_path, notice: 'Location was successfully created.' }
-        format.html { redirect_to session[:my_previous_url], notice: 'Location was successfully created.' }
+        # format.html { redirect_to session[:my_previous_url], notice: 'Location was successfully created.' }
+        format.html { redirect_to session[:my_previous_url] }
         format.json { render :show, status: :created, location: @location }
       else
         format.html { render :new }
