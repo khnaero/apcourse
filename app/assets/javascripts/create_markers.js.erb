@@ -14,12 +14,13 @@ function initialize() {
       // console.log(JSON.stringify(data));
 
       var infowindow = new google.maps.InfoWindow();
-      
+
       var marker, i;
       for (i = 0; i < data.length; i++) {
         marker = new google.maps.Marker({
         position: {lat: data[i].geometry.coordinates[1], lng: data[i].geometry.coordinates[0]},
         title: data[i].properties.name,
+        icon: "<%= asset_path('pullup_icon.png') %>", // added .erb extention to access asset_path helper
         map: map,
         });
 

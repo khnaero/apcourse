@@ -1,43 +1,39 @@
 <% provide(:title, "Gallery") %>
 <!-- <p id="notice"><%= notice %></p> -->
+<body class="gallery">
 
-<h1>Locations</h1>
-
-<%= link_to 'Add Location', new_location_path, class: "btn btn-primary btn-sm" %>
+<!-- <h1>Locations</h1> -->
+<div class="button">
+  <%= link_to 'Add Location', new_location_path, class: "btn btn-primary btn-md" %>
+</div>
 <p></p>
-<!-- <div id="locations"> -->
-<!-- <ul style="list-style-type:none;"> -->
-<ul class="grid">
-  <% @locations.each do |location| %>
-    <!-- <li class="span4"> -->
-    <li>
-      <div class="box">
-        <% if location.photos.first %>
-          <%= link_to image_tag(location.photos.first.image(:medium)), location_path(location) %>
-        <% else %>
-          <%= link_to 'Insert Your Photos', edit_location_path(location) %>
-        <% end %>
 
-        <p style="text-align: center;">
-          <strong><%= location.name %></strong><br>
-          <% if current_user == location.user %>
-            <%= link_to 'Edit', edit_location_path(location), class: "btn btn-primary btn-xs" %>
-            <%= link_to 'Delete', location, method: :delete, data: { confirm: 'Are you sure?' },
-                                                              class: "btn btn-danger btn-xs" %>
+<div class="gallerybox">
+  <ul class="grid">
+    <% @locations.each do |location| %>
+      <li>
+        <div class="box">
+          <% if location.photos.first %>
+            <%= link_to image_tag(location.photos.first.image(:medium)), location_path(location) %>
+          <% else %>
+            <%= link_to 'Insert Your Photos', edit_location_path(location) %>
           <% end %>
-        </p>
-      </div>
-    </li>
-  <% end %>
-</ul>
 
-<!-- <ul>
-  <li>123</li>
-  <li>456</li>
-  <li>678</li>
-</ul> -->
-<!-- </div> -->
+          <p style="text-align: center;">
+            <strong><%= location.name %></strong><br>
+            <% if current_user == location.user %>
+              <%= link_to 'Edit', edit_location_path(location), class: "btn btn-primary btn-xs" %>
+              <%= link_to 'Delete', location, method: :delete, data: { confirm: 'Are you sure?' },
+                                                                class: "btn btn-danger btn-xs" %>
+            <% end %>
+          </p>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
 
+<!--
 <script>
   $(window).load(function() {
     $('.grid').each(function() {
@@ -50,5 +46,7 @@
       $(this).gridEm( { minMargin: 25 } );
     });
   });
-
 </script>
+-->
+
+</body>

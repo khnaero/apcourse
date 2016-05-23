@@ -1,20 +1,21 @@
 <% provide(:title, "Map") %>
+<body class="map">
+	<div class="container-fluid">
+		<div class="row">
+		  <div class="col-md-2">
+			  <ul>
+			  	<% @locations.each do |location| %>
+						<li><%= location.description %></li>
+		      <% end %>
+				</ul>
+		  </div>
+		  <div class="col-md-10">
+		  	<script src="http://maps.googleapis.com/maps/api/js"></script>
 
-<div class="container-fluid">
-	<div class="row">
-	  <div class="col-md-2">
-		  <ul>
-		  	<% @locations.each do |location| %>
-					<li><%= location.description %></li>
-	      <% end %>
-			</ul>
-	  </div>
-	  <div class="col-md-10">
-	  	<script src="http://maps.googleapis.com/maps/api/js"></script>
+		  	<%= javascript_include_tag 'create_markers' %>
 
-	  	<%= javascript_include_tag 'create_markers' %>
-
-	  	<div id="gmap" style="height:800px"></div>
-	  </div>
+		  	<div id="gmap" style="height:800px"></div>
+		  </div>
+		</div>
 	</div>
-</div>
+</body>

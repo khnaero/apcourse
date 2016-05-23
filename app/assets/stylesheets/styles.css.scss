@@ -33,7 +33,6 @@ html {
 
 .home {
   background-image: url("IMG_0403-X2.jpg");
-  /*background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('IMG_0403-X2.jpg');*/
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -43,6 +42,15 @@ html {
 
 .about {
   background-image: url("img_0789.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.map, .gallery, .show_page {
+  background-image: url("gray_paper.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -169,14 +177,6 @@ a:active {
   height: auto;
 }
 
-/*#locations {
-  margin: 0 auto;
-  margin-bottom: 10px;
-  margin-top: 200px;
-  margin-right: auto;
-  margin-left: auto;
-}*/
-
 .grid {
   width: 100%;
   padding: 0;
@@ -189,20 +189,23 @@ a:active {
   *display: inline;
   vertical-align: top;
   height: 250px;
-  width: 225px;
+  // width: 225px;
+  width: auto;
 }
 
 .box {
+  background-color: white;
   margin: 5px;
   padding: 5px;
   font-size: 15px;
   line-height: 1.4em;
   float: left;
-  -webskit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+  // -webskit-border-radius: 5px;
+  // -moz-border-radius: 5px;
+  // border-radius: 5px;
   box-shadow: 1px 1px 10px #444;
-  width: 214px;
+  // width: 214px;
+  width: auto;
 }
 
 .caption {
@@ -217,4 +220,25 @@ a:active {
   padding-bottom: 3px;
 }
 
-/*#map { height: 180px; }*/
+.button {
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+.gallerybox {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.glyphicon-bigger {
+    font-size: 30px; 
+    padding-left: 16px;
+}
+
+.location_title {
+  font-size: 25px;
+  padding-left: 18px;
+  font-weight: bold;
+  color: white;
+}
+

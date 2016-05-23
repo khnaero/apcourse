@@ -45,7 +45,8 @@ function initialize()
   for (i = 0; i < locations.length; i++) {  
     marker = new google.maps.Marker({
       position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-      map: map,
+      icon: 'http://imageshack.com/a/img922/9355/aljNm1.png',
+      map: map
     });
 
     google.maps.event.addListener(marker, 'click', (function(marker, i) {
@@ -127,11 +128,11 @@ $(document).ready(function(){
     </div> -->
 <%= link_to 'Add Location', new_location_path, class: "btn btn-primary btn-sm" %>
     <div id="owl-demo" class="owl-carousel owl-theme">
-      <div class="item"><img src="assets/gun1.jpg"></div>
+    
       <div class="item"><img src="assets/gun2.jpg"></div>
       <div class="item"><img src="assets/gun3.jpg"></div>
       <div class="item"><img src="assets/ckf4C.jpg"></div>
-      <div class="item"><img src="assets/gun1.jpg"></div>
+
       <div class="item"><img src="assets/gun2.jpg"></div>
       <div class="item"><img src="assets/gun3.jpg"></div>
     </div>

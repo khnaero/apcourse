@@ -1,6 +1,6 @@
 class MapController < ApplicationController
   def index
-  	@locations = Location.all
+  	@locations = Location.order(:name)
 
     @geojson = Array.new
 

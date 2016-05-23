@@ -35,20 +35,28 @@ class PhotosController < ApplicationController
   def create
     # @photo = Photo.new(photo_params)
     @location = Location.find(params[:location_id])
+    @photo = @location.photos.new
     # @photo = @location.photos.new(params.require(:photo).permit(:images))
     # @photo = @location.photos.create(photo_params.merge(user_id: current_user.id))
     # @photo.user_id = current_user.id
     # binding.pry
     # @photo.save
-    success = params[:images].inject(true) do |memo, image|
-      memo && @location.photos.create(image: image, user_id: current_user.id)
-    end
-
-    if success
+    if params[:images]
+      params[:images].inject(true) do |memo, image|
+        memo && @location.photos.create(image: image, user_id: current_user.id)
+      end
       redirect_to location_path(@location)
     else
+      flash.now[:success] = "Please choose one or more images"
       render :new
+      # when rendering :new, must redefine @location and @photo
     end
+
+    # if success
+    #   redirect_to location_path(@location)
+    # else
+    #   render :new
+    # end
     # if @photo.save
     #   if params[:images]
     #     params[:images].each { |image| 
