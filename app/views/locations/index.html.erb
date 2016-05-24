@@ -16,7 +16,7 @@
           <% if location.photos.first %>
             <%= link_to image_tag(location.photos.first.image(:medium)), location_path(location) %>
           <% else %>
-            <%= link_to 'Insert Your Photos', edit_location_path(location) %>
+            <%= link_to 'Insert Your Photos', new_location_photo_path(location) %>
           <% end %>
 
           <p style="text-align: center;">
