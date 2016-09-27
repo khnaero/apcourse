@@ -10,11 +10,11 @@ Austin, TX has many free outdoor fitness equipment areas, but their locations ar
 
 A fitness trail, or parcourse, is a path or course that is quipped with fitness stations. Austin Parcourses was to be the original name but Austin Fitness Trails seemed more recognizable to the general public. The new name may also be better for SEO.
 
-Notable gems include:
-devise - authentication solution
-aws-sdk - interfacing with AWS
-paperclip - image uploading
-bootstrap - frontend aesthetics
+Notable gems include:  
+devise - authentication solution  
+aws-sdk - interfacing with AWS  
+paperclip - image uploading  
+bootstrap - frontend aesthetics  
 
-APIs used include:
+APIs used include:  
 Google Maps APIs
